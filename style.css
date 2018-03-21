@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.keys {
+    display: inline-block;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.wrap {
+    border: 1px solid green;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid red;
+}
+
+.delete {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: none;
+}
+
+.editor {
+    position: absolute;
+    left : 5px;
+    bottom: 5px;
+    display: none;
+}
+
+.keys:hover > span{
+    display: inline;
+}

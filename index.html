@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>XF|myKeyboard=Nav</title>
+</head>
+<body>
+    <nav>这是顶部的搜索框</nav>
+    <main>
+        <div  id="container"class="container">
+
+        </div>
+    </main>
+    <script>
+        let keys = [
+            ['1','2','3','4','5','6','7','8','9','0'],
+            ['q','w','e','r','t','y','u','i','o','p'],
+            ['a','s','d','f','g','h','j','k','l'],
+            ['z','x','c','v','b','n','m']
+        ]
+        let hash = {
+            q: 'qq.com',
+            w: 'weibo.com'
+        }
+        let hashInlocalstroage =  JSON.parse(localStorage.getItem('webdata')||'null')
+
+        if (hashInlocalstroage) {
+            hash = hashInlocalstroage
+        }
+
+        for(let i = 0 ; i<keys.length;i++){
+                let div1 = document.createElement('div')
+                div1.className = "wrap"
+                container.appendChild(div1)         
+            for(let j = 0 ;j < keys[i].length; j++){
+                let div2 = document.createElement('div')
+                div2.setAttribute("key", keys[i][j]) 
+                div2.textContent = keys[i][j]
+                div1.appendChild(div2)
+                let span1 = document.createElement('span')
+                span1.textContent = 'D'
+                let span2 = document.createElement('span')
+                span2.textContent ='E'
+                div2.appendChild(span1)
+                div2.appendChild(span2)
+                div2.className = "keys"
+                span1.className = "delete"
+                span2.className = "editor"
+                span2.onclick = function(event){
+                    key = event.target.parentNode.getAttribute('key')
+                    let web = prompt('请设置一个新网址')
+                    hash[key] = web
+                    localStorage.setItem('webdata',JSON.stringify(hash))
+                }
+            }
+        }        
+        document.onkeypress = function(clickTime){
+            console.log(clickTime)
+            let key = clickTime['key']
+            let webSite = hash[key]
+            window.open(`http://${webSite}`)
+        }
+        
+
+    </script>
+</body>
+</html>
