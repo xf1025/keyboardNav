@@ -11,13 +11,16 @@
     <div class="mianpages">
         <nav>
             <div class="navbox">
-                <div class="logo"> Mark17</div>
+                <div class="logobx">
+                        <div class="logo"> Mark | 17</div>
+                    </div>
+                    <div class="searchbar">
+                        <input type="text" name="search" id="search" onfocus="focusMethod()" onblur="judge()">
+                        <button type="submit" id="baidu">百度搜索</button>
+                        <button type="submit" id="google">谷歌搜索</button>
+                    </div>
             </div>
-            <div class="searchbar">
-                <input type="text" name="search" id="search" onfocus="focusMethod()" onblur="judge()">
-                <button type="submit" id="baidu">百度搜索</button>
-                <button type="submit" id="google">谷歌搜索</button>
-            </div>
+         
         </nav>
         <main>
             <div class="containerbox"> 
@@ -38,8 +41,32 @@
             ['z','x','c','v','b','n','m']
         ]
         let hash = {
-            q: 'qq.com',
-            w: 'weibo.com'
+            a: "acfun.cn",
+            b: "baidu.com",
+            c: "douban.com",
+            d: "douban.com",
+            e: "douban.com",
+            f: "douban.com",
+            g: "google.com",
+            h: "acfun.cn",
+            i: "acfun.cn",
+            j: "jingdong.com",
+            k: "google.com",
+            l: "google.com",
+            m: "google.com",
+            n: "google.com",
+            o: "google.com",
+            p: "google.com",
+            q: "qq.com",
+            r: "zhihu.com",
+            s: "zhihu.com",
+            t: "zhihu.com",
+            u: "zhihu.com",
+            v: "zhihu.com",
+            w: "weibo.com",
+            x: "zhihu.com",
+            y: "zhihu.com",
+            z: "zhihu.com"
         }
         let hashInlocalstroage =  forminLocalstroage('webdata')
         
